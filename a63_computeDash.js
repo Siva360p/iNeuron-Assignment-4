@@ -11,7 +11,9 @@ function computeDash(input){
             output = output + '0-';
         }
         else {
-            if(input.charAt(k+1) % 2 != 0)
+            if(input.charAt(k+1) % 2 == 0)
+            output = output + '0-';
+            else
             output = output + '0';
             break;
         }
