@@ -5,24 +5,26 @@ function computeDash(input){
     let array = [], i=0, j=0, k=0;
 
     // Check starting Zeros
+    if(input.charAt(0) == 0){
 
     for(k=0; k<input.length; k++){
         if((input.charAt(k) == 0) && (input.charAt(k+1) == 0)){
             output = output + '0-';
         }
         else {
-            if(input.charAt(k+1) % 2 == 0)
+            if((input.charAt(k) == 0) && (input.charAt(k+1) % 2 == 0))
             output = output + '0-';
-            else
+            else if((input.charAt(k) == 0) && (input.charAt(k+1) % 2 != 0))
             output = output + '0';
             break;
         }
+    }
     }
     input = parseInt(input);
 
     // Get the remainning digits
 
-    while(input>1){
+    while(input>=1){
         array[i] = input % 10;
         input = parseInt(input/10);
         i++;
